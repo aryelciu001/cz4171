@@ -19,6 +19,6 @@ app.post("/", upload.single("picture"), (req, res) => {
   });
 });
 
-app.listen(3001, () => {
+app.listen(80, () => {
   console.log("server is up");
 });
