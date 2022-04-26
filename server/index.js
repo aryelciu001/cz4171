@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", upload.single("picture"), (req, res) => {
-  console.log(req.body, req.file);
   tesseract.recognize(req.file.buffer, "eng").then(({ data: { text } }) => {
     return res.send(text);
   });
