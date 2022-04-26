@@ -3,13 +3,18 @@ const express = require("express");
 const multer = require("multer");
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const bodyParser = require("body-parser");
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   return res.send("server is up");
 });
 
 app.post("/", upload.single("picture"), (req, res) => {
+  console.log(req.body, req.file);
   tesseract.recognize(req.file.buffer, "eng").then(({ data: { text } }) => {
     return res.send(text);
   });

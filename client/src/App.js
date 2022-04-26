@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import axios from "axios";
+import "./App.css";
+
+const URL = "http://localhost:3001";
 
 function App() {
+  const upload = () => {
+    const formData = new FormData();
+    const config = {
+      headers: { "content-type": "multipart/form-data" },
+    };
+    formData.append("picture", ref.current.files[0]);
+    axios.post(URL, formData, config).then((res) => console.log(res.data));
+  };
+
+  const ref = useRef(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input ref={ref} type="file" accept="image/*"></input>
+      <button onClick={() => upload()}>Upload</button>
     </div>
   );
 }
