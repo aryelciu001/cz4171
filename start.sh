@@ -1,7 +1,7 @@
 pkill -f node
 yes | cp -rf ./nginx.conf /etc/nginx
-mkdir /var/www
-yes | cp ./client/build /var/www
+rm -r /var/www/html/*
+cp -a ./client/build /var/www/html
 sudo systemctl restart nginx
 cd server 
 npm start
