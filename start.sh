@@ -1,0 +1,1 @@
+yes | cp -rf ./nginx.conf /etc/nginx

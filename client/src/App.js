@@ -2,8 +2,6 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const URL = "http://localhost:3001";
-
 function App() {
   const upload = () => {
     if (!ref) return;
@@ -13,7 +11,7 @@ function App() {
     };
     formData.append("picture", ref.current.files[0]);
     setLoading(true);
-    axios.post(URL, formData, config).then((res) => {
+    axios.post("/api", formData, config).then((res) => {
       setText(res.data);
       setLoading(false);
     });
