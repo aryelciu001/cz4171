@@ -1,0 +1,20 @@
+{
+  "name": "cz4171",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "npx prettier --write client/src server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryelciu001/cz4171.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryelciu001/cz4171/issues"
+  },
+  "homepage": "https://github.com/aryelciu001/cz4171#readme"
+}
