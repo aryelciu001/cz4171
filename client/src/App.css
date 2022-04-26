@@ -1,8 +1,62 @@
 .App {
   width: 100%;
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text {
   white-space: pre-wrap;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+label,
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+}
+
+.buttons > * {
+  flex: 1;
+}
+
+.buttons > *:first-child {
+  margin-right: 5px;
+}
+
+.buttons > *:last-child {
+  margin-left: 5px;
+}
+
+.text {
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  aspect-ratio: 3/1;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text > hr {
+  width: 100%;
+  margin-bottom: 10px;
 }
